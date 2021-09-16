@@ -1,0 +1,56 @@
+\newsavebox{\mybox}
+\newlength{\mydepth}
+\newlength{\myheight}
+
+\newenvironment{sidebar}%
+{\begin{lrbox}{\mybox}\begin{minipage}{\textwidth}}%
+		{\end{minipage}\end{lrbox}%
+	\settodepth{\mydepth}{\usebox{\mybox}}%
+	\settoheight{\myheight}{\usebox{\mybox}}%
+	\addtolength{\myheight}{\mydepth}%
+	\noindent\makebox[0pt]{\hspace{-20pt}\rule[-\mydepth]{1pt}{\myheight}}%
+	\usebox{\mybox}}
+
+\newcommand\BackgroundPic{
+	\put(-2,-3){
+		\includegraphics[keepaspectratio,scale=0.3]{images/lnu_etch.png} % Background picture
+	}
+}
+\newcommand\BackgroundPicLogo{
+	\put(30,740){
+		\includegraphics[keepaspectratio,scale=0.10]{images/logo.png} % Logo in upper left corner
+	}
+}
+
+\title{	
+	\vspace{-8cm}
+	\begin{sidebar}
+		\vspace{10cm}
+		\normalfont \normalsize
+		\Huge Master's Degree Project Proposal \\
+		\vspace{-1.3cm}
+	\end{sidebar}
+	\vspace{3cm}
+	\begin{flushleft}
+		\huge Distributed Information Flow Control in Android Applications\\ 
+%		\it \LARGE - Optional subtitle 
+	\end{flushleft}
+	\null
+	\vfill
+	\begin{textblock}{6}(9,13)
+		\begin{flushright}
+			\begin{minipage}{\textwidth}
+				\begin{flushleft} \large
+					\emph{Author:} Prasannjeet Singh\\ % Author
+					\emph{Supervisor:} Narges Khakpour\\ % Supervisor
+					%\emph{Examiner:} Dr.~Mark \textsc{Brown}\\ % Examiner (course manager)
+					\emph{Course Code:} 5DV50E\\
+					\emph{Semester:} HT 2021\\ % 
+					\emph{Department:} Computer Science\\ % Subject area
+				\end{flushleft}
+			\end{minipage}
+		\end{flushright}
+	\end{textblock}
+}
+
+\date{} 

@@ -1,0 +1,15 @@
+Being a fledgling technology, Serverless is yet to receive the required attention, and as a result, it is strongly vulnerable to external attacks. Furthermore, it is important to ensure Confidentiality and Integrity of data in an application. The virtue of a system to allow only authorized users the access to protected and sensitive data while shielding the data from harmful invaders is called Confidentiality. Additionally, Integrity alludes to the methodologies that ensure the authenticity of data, and the fact that it is accurate, and confidential.
+
+IFC models have previously been implemented for traditional applications. The proposed work by Khakpour et. al \cite{Khakpour2018} works on Symbolic Confidentiality Guards Synthesizer, or SCGS, \footcite{N. Berthire and N. Khakpour, “Symbolic Confidentiality Guards Synthesizer — (SCGS),” Department of Computer Science, University of Liverpool and Department of Computer Science and Media Technology, Linnéuniversitetet, 2018. https://cgi.csc.liv.ac.uk/~nberth/scgs/.} which is a static analysis tool that primarily identifies any confidential data leak automatically in object-oriented programs. The aforementioned work supports centralized IFC where it synthesizes security guards for single methods in an application. In this work, we will extend it with decentralized IFC to enforce confidentiality and integrity in serverless computing.
+
+ Moreover, an IFC system for Serverless Applications has also been developed \cite{Alpernas2018} as discussed previously. While the former enforces TINI for traditional JAVA applications, the latter implements the TSNI model for Serverless functions written in JavaScript for the node.js runtime. Furthermore, it only focuses on data \textit{confidentiality} and does not enforce data \textit{integrity}. Therefore a strong framework is needed for the security of Serverless Applications that enforces both data \textit{confidentiality} and \textit{integrity}. Additionally, other programming languages should also be focused upon. Based on the above discussions, we can elicit the ensuing \textbf{research questions} targeted to our study:
+\begin{changemargin}{2cm}{0.5cm} 
+	\begin{enumerate}[label=\textbf{RQ{{\arabic*}}:} ]
+		\item
+		Can an approach designed for native Java applications to enforce confidentiality and integrity be equally effective for a Java based serverless application? Why?
+		\item
+		What is the recommended approach to make a Java based serverless application secure, using distributed information flow control?
+		\item 
+		Can a tool that analyzes the Java based serverless application be built based on the aforementioned approach?
+	\end{enumerate}
+\end{changemargin} 

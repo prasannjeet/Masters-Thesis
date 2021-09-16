@@ -1,0 +1,128 @@
+%----------------------------------------------------------------------------------------
+%
+% Master's Thesis Project Proposal, 5DV50E
+% By: Prasannjeet Singh, ps222vt@student.lnu.se
+% Department of Computer Science
+% Linnaeus University
+%
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	The Preamble
+%----------------------------------------------------------------------------------------
+\documentclass[a4paper,10pt,table,xcdraw]{thesis}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{wallpaper}
+\usepackage[absolute]{textpos}
+\usepackage[top=2cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{xltxtra} % Using this for loading custom text font
+\usepackage[font=footnotesize,labelfont=bf]{caption} %for smaller size of caption
+\usepackage{wrapfig} % for wrapping figure left or right
+\usepackage[style=ieee, backend=biber]{biblatex} %for bibliography
+\usepackage{framed} %for adding a framebox
+\usepackage[framemethod=tikz]{mdframed} %to change the background color in 'begin{framed}
+\usepackage{listings} % for \listingputlisting
+\usepackage{tabto} %for using tabs
+\usepackage{caption} %because for some reason, caption for figure 1.1 does not show traditioanlly
+%\usepackage[hang,flushmargin]{footmisc}  % for left indenting footnotes
+\usepackage{scrextend} %for footnote indentation (using \deffootnote)
+\usepackage{hyperref} %for adding hyperlinks to citations and references
+\usepackage{xcolor}
+%\usepackage[]{xcolor} %for defining colors of hyperlinks in \hypersetup{}
+\usepackage{enumitem} %for customising bullet point format (in RQ1, RQ2, etc.)
+\usepackage{booktabs} %for using tables in the section time plan
+\usepackage{tabularx} %for auto fitting the tables
+
+%----------------------------------------------------------------------------------------
+%	Other Settings
+%----------------------------------------------------------------------------------------
+\tolerance=1					%prevent hyphenating
+\emergencystretch=\maxdimen		%prevent hyphenating
+\hyphenpenalty=10000			%prevent hyphenating
+\hbadness=10000					%prevent hyphenating
+\addbibresource{references.bib} %for bibliography
+\author{Prasannjeet Singh}
+\renewcommand{\footnotesize}{\scriptsize} %decreasing the footnote size
+\deffootnote{2em}{0em}{\thefootnotemark\quad} %for formatting footnote labels
+\hypersetup{		% defining hyperlink colors
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!80!black},
+	urlcolor={blue!50!black},
+	hyperfootnotes
+}
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]} 	%for paragraphs with...
+\let\endchangemargin=\endlist 										%different margin
+
+%----------------------------------------------------------------------------------------
+%	Title section
+%----------------------------------------------------------------------------------------
+
+\input{coverPageSettings}
+
+\begin{document}
+	\pagenumbering{gobble}	
+	\newgeometry{left=5cm}
+	\AddToShipoutPicture*{\BackgroundPic}
+	\AddToShipoutPicture*{\BackgroundPicLogo}
+	\maketitle
+	\restoregeometry
+	\clearpage
+	\selectlanguage{english}
+	
+%----------------------------------------------------------------------------------------
+%	Table of Contents
+%----------------------------------------------------------------------------------------
+	\renewcommand*\contentsname{Table of Contents}
+	\tableofcontents % Table of contents
+	\newpage
+	\pagenumbering{arabic}
+	
+%----------------------------------------------------------------------------------------
+%	Setting main font for the rest of the document
+%----------------------------------------------------------------------------------------
+	\setmainfont[
+	BoldFont={Charter Bold}, 
+	ItalicFont={Charter Italic},
+	]{Charter}
+%----------------------------------------------------------------------------------------
+%	All Other Sections
+%----------------------------------------------------------------------------------------
+	
+	\chapter{Background}
+	\input{chapters/background}
+	\newpage
+	
+	\chapter{Motivation}
+	\input{chapters/motivation}
+	\newpage
+	
+	\chapter{Problem Statement}
+	\input{chapters/problemStatement}
+	\label{section:ProblemStatement}
+	\newpage
+	
+	\chapter{Contributions}
+	\input{chapters/contributions}
+	\newpage
+	
+	\chapter{Approach}
+	\input{chapters/approach}
+	\newpage
+	
+	\chapter{Time Plan}
+	\input{chapters/timePlan}
+	\newpage
+	
+	\chapter{Cooperation Form}
+	\input{chapters/cooperationForm}
+	\newpage
+	
+%----------------------------------------------------------------------------------------
+%	Bibilography
+%----------------------------------------------------------------------------------------
+	%\renewcommand*{\UrlFont}{\rmfamily} %Prints URL in normal font
+	\printbibliography
+	
+\end{document}

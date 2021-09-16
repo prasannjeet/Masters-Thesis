@@ -1,0 +1,2 @@
+input h from cH
+while h>0 do skip
